@@ -7,9 +7,9 @@ local maps = {
     "prompt_sandy_airfield",
     "cfx_prompt_sandy_shores_fire_department"
 }
-
+ 
 local events = {}
-
+ 
 CreateThread(function()
     local exists = false 
     TriggerEvent("lyn-mapdata:exists", function(exists)
@@ -17,16 +17,16 @@ CreateThread(function()
             exists = true
         end
     end)
-
+ 
     if exists == true then 
         print("^6[Prompt]^1 Map data already exists. There must be only one mapdata installed!^0")
     end
 end)
-
+ 
 RegisterNetEvent("lyn-mapdata:exists", function(cb)
     cb(true)
 end)
-
+ 
 for i = 1, #maps do
     local eventName = maps[i] .. ":mapDataExists"
     if Debug == true then 
@@ -37,5 +37,5 @@ for i = 1, #maps do
     end)
     table.insert(events, event)
 end
-
+ 
 -- 
